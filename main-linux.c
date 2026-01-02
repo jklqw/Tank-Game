@@ -65,7 +65,7 @@ void shot(int angle, int power, int xi, int yi, char grid[22][121], int *h1, int
       system("clear");
       printstatus(*h1, *h2);
       printmap(grid);
-      usleep(100);
+      usleep(100000);
       grid[y][x] = ' ';
       t += 0.1;
       x = round(vx * t + xi);
@@ -73,13 +73,13 @@ void shot(int angle, int power, int xi, int yi, char grid[22][121], int *h1, int
       if (y > 11 && grid[y][x] == '^')
       {
          printf("Shot Terminated!\n");
-         usleep(3000);
+         usleep(3000000);
          break;
       }
       if (x > 119 || x < 0 || y > 19 || y < 0)
       {
          printf("Shot Terminated!\n");
-         usleep(3000);
+         usleep(3000000);
          break;
       }
       if (grid[y][x] != ' ' && grid[y][x] != '#' && grid[y][x] != '^' && x >= 85)
@@ -93,7 +93,7 @@ void shot(int angle, int power, int xi, int yi, char grid[22][121], int *h1, int
             printf("BOOM!!! Friendly Fire\n");
          }
          *h2 -= 20;
-         usleep(3000);
+         usleep(3000000);
          break;
       }
       // printf("(%d,%d):%c",y,x,grid[y][x]);
@@ -108,7 +108,7 @@ void shot(int angle, int power, int xi, int yi, char grid[22][121], int *h1, int
             printf("BOOM!!! Friendly Fire\n");
          }
          *h1 -= 20;
-         usleep(3000);
+         usleep(3000000);
          break;
       }
    }
@@ -159,7 +159,7 @@ int main()
          if (p1+x > 24)
          {
             printf("Illegal Move - Your Turn Is Lost!\n");
-            usleep(3000);
+            usleep(3000000);
             b = 1;
          }
          else
@@ -178,7 +178,7 @@ int main()
          if (p1-x < 0)
          {
             printf("Illegal Move - Your Turn Is Lost!\n");
-            usleep(3000);
+            usleep(3000000);
             b = 1;
          }
          else
@@ -204,7 +204,7 @@ int main()
       else if (c != 'S')
       {
          printf("Invalid Input - Your Turn Is Lost!\n");
-         usleep(3000);
+         usleep(3000000);
          b = 1;
       }
       if (b == 0)
@@ -214,7 +214,7 @@ int main()
          if (angle > 180 || angle < 0)
          {
             printf("Angle Out Of Range - Your Turn Is Lost!\n");
-            usleep(3000);
+            usleep(3000000);
             b = 1;
          }
       }
@@ -225,7 +225,7 @@ int main()
          if (power > 100 || power < 1)
          {
             printf("Power Out Of Range - Your Turn Is Lost!\n");
-            usleep(3000);
+            usleep(3000000);
             b = 1;
          }
       }
@@ -257,7 +257,7 @@ int main()
          if (p2+x >119)
          {
             printf("Illegal Move - Your Turn Is Lost!\n");
-            usleep(3000);
+            usleep(3000000);
             b = 1;
          }
          else
@@ -276,7 +276,7 @@ int main()
          if (p2-x <85)
          {
             printf("Illegal Move - Your Turn Is Lost!\n");
-            usleep(3000);
+            usleep(3000000);
          }
          else
          {
@@ -301,7 +301,7 @@ int main()
       else if (c != 'S')
       {
          printf("Invalid Input - Your Turn Is Lost!\n");
-         usleep(3000);
+         usleep(3000000);
          b = 1;
       }
       if (b == 0)
@@ -311,7 +311,7 @@ int main()
          if (angle > 180 || angle < 0)
          {
             printf("Angle Out Of Range - Your Turn Is Lost!\n");
-            usleep(3000);
+            usleep(3000000);
             b = 1;
          }
       }
@@ -322,7 +322,7 @@ int main()
          if (power > 100 || power < 1)
          {
             printf("Power Out Of Range - Your Turn Is Lost!\n");
-            usleep(3000);
+            usleep(3000000);
             b = 1;
          }
       }
